@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Data Science Prediction Web App</title>
+    <link rel="stylesheet" href="contact_db.css">
+
+    <style>
+    .navbar {
+        background-color: #007BFF;
+        overflow: hidden;
+        display: flex;
+        justify-content: center; /* Centers the items horizontally */
+        align-items: center; /* Centers the items vertically (if there's extra space) */
+    }
+    .navbar a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    .navbar a:hover {
+        background-color: #0056b3; /* Darker shade for hover effect */
+    }
+    .header {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home_ds.html">Home</a>
+        <a href="http://127.0.0.1:8000">Donor Registration</a>
+        <a href="http://127.0.0.1:8000/view">Donor list</a>
+        <a href="eligibility.html">Awareness</a>
+        <a href="contact_db.html">Contact</a>
+    </div>
+
+    <div class="header">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <p>If you have any questions, feedback, or inquiries about our data science prediction web application, please don't hesitate to reach out to us using the contact information below.</p>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:deborahm@karunya.edu.in">deborahm@karunya.edu.in</a></p>
+                <p>Phone: <a href="tel:+919791620790">9791620790</a></p>
+                <p>Address: 456 nehru street,Chennai,TamilNadu , India </p>
+            </div>
+            <div class="map">
+                <!-- Embed Google Maps or other map service here -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.359882869317!2d76.74406100000002!3d10.936164000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba866bd6aaaaaab%3A0xc650b8a75e7b51f0!2sKarunya%20Institute%20of%20Technology%20and%20Sciences%20(Deemed%20University)!5e0!3m2!1sen!2sin!4v1712640083365!5m2!1sen!2sin" width="200" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="social-media-box">
+                <div class="social-media">
+                    <h2>Connect with us on Social Media</h2>
+                    <ul>
+                        <li><a href="https://www.facebook.com/datasciencepredictions"><img src="facebook.png" alt="Facebook" width="40" height="40"></a></li>
+                        <li><a href="https://twitter.com/datasciencepred"><img src="twitter.png" alt="Twitter" width="40" height="40"></a></li>
+                        <li><a href="https://www.linkedin.com/company/datasciencepredictions"><img src="linkedin.png" alt="LinkedIn" width="40" height="40"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="webpage-review">
+                <h2>Webpage Review</h2>
+                <form action="review.html" method="POST" id="reviewForm">
+
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" required><label for="star5" title="5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star"></label>
+                    </div>
+                    <br><br><input type="submit" value="Submit" onclick="showAlert()">
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function showAlert() {
+            alert("Review submitted successfully! Thank you for your feedback.");
+        }
+    </script>
+        </div>
+    </div>
+
+    
+</body>
+</html>

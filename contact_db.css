@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('contactds.png'); /* Replace 'background_image.jpg' with the path to your background image */
+    background-size: cover;
+    background-position: center;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9; 
+
+
+}
+
+  
+
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.map {
+    margin-top: 20px;
+}
+
+.social-media-box {
+    margin-top: 20px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.social-media ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media li:last-child {
+    margin-right: 0;
+}
+
+.social-media a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-media a img:hover {
+    transform: scale(1.2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 1s ease;
+}
+
+.rating {
+    display: inline-block;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    float: right;
+    color: #ddd;
+}
+
+.rating label:before {
+    content: '★';
+    padding: 5px;
+    font-size: 24px;
+}
+
+.rating input:checked ~ label {
+    color: #f90;
+}

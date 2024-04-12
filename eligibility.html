@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Eligibility Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .container:hover {
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease-in-out;
+        }
+        input:hover, select:hover {
+            border-color: #007bff;
+        }
+        input:focus, select:focus {
+            border-color: #0056b3;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 85, 179, 0.5);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dddddd;
+            border-radius: 5px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .navbar {
+            background-color: #007BFF;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #0056b3;
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home_ds.html">Home</a>
+        <a href="http://127.0.0.1:8000">Donor Registration</a>
+        <a href="http://127.0.0.1:8000/view">Donor list</a>
+        <a href="eligibility.html">Awareness</a>
+        <a href="contact_db.html">Contact</a>
+    </div>
+
+    <div class="header">
+        <h1>Eligibility Form</h1>
+    </div>
+
+    <div class="container">
+        <form id="eligibilityForm">
+            <label for="age">Age (18-65):</label>
+            <input type="number" id="age" name="age" required min="18" max="65">
+
+            <label for="weight">Weight (kg) - Minimum 50kg required:</label>
+            <input type="number" id="weight" name="weight" required min="50">
+
+            <label for="lastDonation">Months since last donation (Minimum 3 months):</label>
+            <input type="number" id="lastDonation" name="lastDonation" required min="3">
+
+            <label for="health">Are you currently healthy (No cold, flu, etc.)?</label>
+            <select id="health" name="health">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="sugarLevels">Blood sugar levels (mg/dL) - Normal range (70-140):</label>
+            <input type="number" id="sugarLevels" name="sugarLevels" required min="70" max="140">
+
+            <label for="recentTravel">Have you traveled outside the country in the last 6 months?</label>
+            <select id="recentTravel" name="recentTravel">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <button type="button" onclick="checkEligibility()">Check Eligibility</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkEligibility() {
+            const age = document.getElementById('age').value;
+            const weight = document.getElementById('weight').value;
+            const lastDonation = document.getElementById('lastDonation').value;
+            const health = document.getElementById('health').value;
+            const sugarLevels = document.getElementById('sugarLevels').value;
+            const recentTravel = document.getElementById('recentTravel').value;
+
+            let eligibilityMessages = [];
+            if (age < 18 || age > 65) eligibilityMessages.push("Age should be between 18 and 65.");
+            if (weight < 50) eligibilityMessages.push("Weight must be at least 50 kg.");
+            if (lastDonation < 3) eligibilityMessages.push("It must be at least 3 months since your last donation.");
+            if (health !== 'yes') eligibilityMessages.push("You must be in good health to donate.");
+            if (sugarLevels < 70 || sugarLevels > 140) eligibilityMessages.push("Blood sugar levels must be between 70 and 140 mg/dL.");
+            if (recentTravel === 'yes') eligibilityMessages.push("No recent international travel is allowed.");
+
+            if (eligibilityMessages.length === 0) {
+                document.getElementById('result').innerHTML = "You are eligible to donate blood!";
+                document.getElementById('result').style.backgroundColor = "#28a745";
+                document.getElementById('result').style.color = "white";
+            } else {
+                document.getElementById('result').innerHTML = "You are not eligible to donate blood due to the following reasons:<br>" + eligibilityMessages.join("<br>");
+                document.getElementById('result').style.backgroundColor = "#dc3545";
+                document.getElementById('result').style.color = "white";
+            }
+        }
+    </script>
+</body>
+</html>

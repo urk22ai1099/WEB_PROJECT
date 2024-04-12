@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Bank Management System</title>
+    <link rel="stylesheet" href="styles_home.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-image: url('user.png'); /* Updated background image path */
+            background-size: cover; /* Ensures the background covers the entire body */
+        }
+        .navbar {
+            background-color: #007BFF;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #0056b3;
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .feature-icon {
+            width: 50px;
+            margin-right: 20px;
+        }
+        .feature-text {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .promotional {
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #6c84fd;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home_ds.html">Home</a>
+        <a href="http://127.0.0.1:8000">Donor Registration</a>
+        <a href="http://127.0.0.1:8000/view">Donor list</a>
+        <a href="eligibility.html">Awareness</a>
+        <a href="contact_db.html">Contact</a>
+    </div>    
+    <div class="header">
+        <h1>BLOOD BANK MANAGEMENT SYSTEM</h1>
+    </div>
+    <div class="container">
+        <section class="features">
+            <h2 style="color:navy">Features</h2>
+            <ul>
+                <li class="feature-item"><img src="blood_icon.png" alt="Donor Icon" class="feature-icon"><span class="feature-text">Efficient Donor Management</span></li>
+                <li class="feature-item"><img src="donor_icon.png" alt="Blood Icon" class="feature-icon"><span class="feature-text">Blood Inventory Management</span></li>
+                <li class="feature-item"><img src="event_icon.png" alt="Event Icon" class="feature-icon"><span class="feature-text">Organize Donation Events</span></li>
+                <li class="feature-item"><img src="report_icon.png" alt="Reports Icon" class="feature-icon"><span class="feature-text">Detailed Reporting & Statistics</span></li>
+            </ul>
+        </section>
+    
+        <section class="promotional">
+            <h2>Become a Donor Today!</h2>
+            <p>Join our community and help save lives by donating blood regularly. Register now to make a difference!</p>
+            <a href="index.html" class="button">Register as Donor</a><br><br>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Blood Bank Management System</p>
+    </footer>
+</body>
+</html>
